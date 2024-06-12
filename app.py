@@ -1,11 +1,17 @@
-from flask import Flask,render_template,request,redirect,url_for
-app=Flask(__name__)
+from flask import Flask, render_template
 
-#endpoint pour la page d'accueil
+app = Flask(__name__)
+
+# Endpoint pour la page d'accueil
 @app.route('/')
 @app.route('/home')
 def home():
     return "RAMAFRAXA"
 
-if __name__=='__main__':
+# Endpoint pour la page de portfolio
+@app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
